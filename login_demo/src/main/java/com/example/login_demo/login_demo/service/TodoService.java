@@ -21,14 +21,23 @@ public class TodoService {
 	@PostConstruct
 	public void loadDummyData() {
 		Todo inputForm = new Todo();
-		inputForm.setId("idididid");
-		Date date = new Date(0);
+		inputForm.setId(UUID.randomUUID().toString());
+		Date date = new Date(System.currentTimeMillis());
+		Date limitDate = new Date(System.currentTimeMillis() + (60 * 60 * 24 * 10 * 1000));
+		inputForm.setTitle("サンプルタイトル01");
+		inputForm.setDescription("サンプル説明01");
 		inputForm.setPublishedDate(date);
+		inputForm.setStartDate(limitDate);
+
 		todoRepository.put(inputForm.getId(), inputForm);
 		
 		Todo inputForm2 = new Todo();
-		inputForm2.setId("idididid2");
+		inputForm2.setId(UUID.randomUUID().toString());
+		inputForm2.setTitle("サンプルタイトル02");
+		inputForm2.setDescription("サンプル説明02");
 		inputForm2.setPublishedDate(date);
+		inputForm2.setStartDate(date);
+		inputForm2.setLimitDate(limitDate);
 		todoRepository.put(inputForm2.getId(), inputForm2);
 	}
 	
