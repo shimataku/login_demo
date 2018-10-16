@@ -27,7 +27,9 @@ public class TodoService {
 		inputForm.setTitle("サンプルタイトル01");
 		inputForm.setDescription("サンプル説明01");
 		inputForm.setPublishedDate(date);
-		inputForm.setStartDate(limitDate);
+		inputForm.setLimitDate(limitDate);
+		inputForm.setStartDate(date);
+		inputForm.setIsFix(false);
 
 		todoRepository.put(inputForm.getId(), inputForm);
 		
@@ -38,6 +40,7 @@ public class TodoService {
 		inputForm2.setPublishedDate(date);
 		inputForm2.setStartDate(date);
 		inputForm2.setLimitDate(limitDate);
+		inputForm2.setIsFix(false);
 		todoRepository.put(inputForm2.getId(), inputForm2);
 	}
 	

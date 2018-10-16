@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.login_demo.login_demo.entity.Todo;
 import com.example.login_demo.login_demo.entity.TodoDoingResource;
+import com.example.login_demo.login_demo.entity.TodoListResponse;
 import com.example.login_demo.login_demo.entity.TodoResource;
 import com.example.login_demo.login_demo.service.TodoService;
 
@@ -63,8 +64,8 @@ public class HelloController {
 
 	// Todo一覧取得
 	@RequestMapping(value = "/inputform", method = RequestMethod.GET)
-	private List<Todo> getAll() {
-		return inputFormService.findAll();
+	private TodoListResponse getAll() {
+		return new TodoListResponse(inputFormService.findAll());
 	}
 
 	// Todo単体取得
