@@ -22,8 +22,8 @@ public class TodoService {
 	public void loadDummyData() {
 		Todo inputForm = new Todo();
 		inputForm.setId(UUID.randomUUID().toString());
-		Date date = new Date(System.currentTimeMillis());
-		Date limitDate = new Date(System.currentTimeMillis() + (60 * 60 * 24 * 10 * 1000));
+		Long date = System.currentTimeMillis();
+		Long limitDate = date + (60 * 60 * 24 * 10 * 1000);
 		inputForm.setTitle("サンプルタイトル01");
 		inputForm.setDescription("サンプル説明01");
 		inputForm.setPublishedDate(date);
@@ -48,12 +48,12 @@ public class TodoService {
 		//UUIDを生成
 		String inputFormId = UUID.randomUUID().toString();
 		todo.setId(inputFormId);
-		//登録したばっかなのでデフォルトでやってない
+		//
 		todo.setIsFix(false);
-		//現在時間をセット
+		//
 		long systemCurrentTimeMillis = System.currentTimeMillis();
-		todo.setPublishedDate(new Date(systemCurrentTimeMillis));
-		//セット
+		todo.setPublishedDate(systemCurrentTimeMillis);
+		//
 		todoRepository.put(todo.getId(), todo);
 		return todo;
 	}

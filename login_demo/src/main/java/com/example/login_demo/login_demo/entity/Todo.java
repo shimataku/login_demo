@@ -14,15 +14,15 @@ public class Todo implements Serializable{
 	private String id;
 	//タイトル
 	private String title;
-	//説明
+	//詳細
 	private String description;
-	//登録日
-	private Date publishedDate;
-	//開始日
-	private Date startDate;
-	//期限日
-	private Date limitDate;
-	//完了フラグ
+	//公開時間
+	private Long publishedDate;
+	//開始時間
+	private Long startDate;
+	//終了時間
+	private Long limitDate;
+	//終わった?
 	private Boolean isFix;
 
 }

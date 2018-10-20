@@ -10,12 +10,17 @@ public class TodoResource implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	//タイトル
+	private String id;
+	//
 	private String title;
-	//説明
+	//
 	private String description;
-	//開始時間
-	private Date startDate;
-	//終了時間
-	private Date limitDate;
+	
+	private Long publishedDate;
+	//
+	private Long startDate;
+	//
+	private Long limitDate;
+	
+	private Boolean isFix;
 }
